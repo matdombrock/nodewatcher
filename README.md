@@ -10,3 +10,17 @@ Example output:
 ::ffff:24.17.107.167 ||| Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0
 ::ffff:24.17.107.167 ||| curl/7.68.0
 ```
+
+## Building Docker Image
+```
+docker build -t nodewatcher nodewatcher
+```
+
+## Running 
+
+This app runs on post 7331 by default (this can be easily changed in the `index.js` file).
+
+If you are running with Docker you can run like:
+```
+docker run -p <your-port>:7331 nodewatcher
+```
