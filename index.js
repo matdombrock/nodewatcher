@@ -10,7 +10,8 @@ app.get('*', (req, res) => {
   const ua = req.get('User-Agent');
   const data = ip + ' ||| ' + ua + '\r\n'
   fs.appendFileSync(__dirname+'/log.txt', data);
-  res.send(data);
+  const cur = fs.readFileSync(__dirname+'/log.txt', 'utf-8');
+  res.send('<pre>'+cur+'</pre>');
 });
 
 app.listen(port, () => {
